@@ -1,6 +1,8 @@
-# Samples to controll LOCOMO
+# Samples to control LOCOMO
 
-This sample is for 'Xbee\-WiFi', set the 'Xbee\-WiFi' instead of 'Xbee' to LOCOMO board.
+Sample programs to control LOCOMO.
+
+'udp' samples are for 'Xbee\-WiFi', set the 'Xbee\-WiFi' instead of 'Xbee' to LOCOMO board.
 
 You can set up a 'Xbee\-WiFi' by reference to the following link, or using X\-CTU.
 
@@ -19,6 +21,10 @@ Change 'PORT' to the appropriate one.
 
 Processing sample to control LOCOMO via UDP.
 
+Change 'UDP\_IP' and 'UDP\_PORT' to the appropriate one.
+
+	static final String UDP_IP = "192.168.1.**";  // ip address of Xbee wifi
+	static final int UDP_PORT = 9750;  // port
 ## Python samples
 
 ### dc-motor-controller.py
