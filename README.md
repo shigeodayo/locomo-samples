@@ -21,6 +21,10 @@ Change 'PORT' to the appropriate one.
 
 Processing sample to control LOCOMO via UDP.
 
+Require 'udp' library. Please download from the following link.
+
+[http://ubaa.net/shared/processing/udp/](http://ubaa.net/shared/processing/udp/ "http://ubaa.net/shared/processing/udp/")
+
 Change 'UDP\_IP' and 'UDP\_PORT' to the appropriate one.
 
 	static final String UDP_IP = "192.168.1.**";  // ip address of Xbee wifi
@@ -45,3 +49,26 @@ Change 'UDP\_IP' and 'UDP\_PORT' to the appropriate one.
 
 	UDP_IP = "192.168.1.**"  # ip address of Xbee wifi
 	UDP_PORT = 9750  # port
+## Java samples
+
+### dc_motor_controller.java
+
+Require 'rxtx\-2.2pre\-bins'. Please download from the following link, and add 'RXTXcomm.jar' and librxtxSerial.{so, jnilib, dll} to the build path.
+
+[http://rxtx.qbang.org/wiki/index.php/Download](http://rxtx.qbang.org/wiki/index.php/Download "http://rxtx.qbang.org/wiki/index.php/Download")
+
+Change 'PORT' to the appropriate one.
+
+	private static final String PORT = '/dev/tty.usbserial-***';
+If you have an error while establishing connection, this link may be useful for you.
+
+[http://jlog.org/rxtx-mac.html](http://jlog.org/rxtx-mac.html "http://jlog.org/rxtx-mac.html")
+
+### dc_motor_controller_udp.java
+
+Java sample to control LOCOMO via UDP.
+
+Change 'UDP\_IP' and 'UDP\_PORT' to the appropriate one.
+
+		private static final String UDP_IP = "192.168.1.**"; // ip address of Xbee wifi
+		private static final int UDP_PORT = 9750; // port

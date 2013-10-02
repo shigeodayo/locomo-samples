@@ -33,3 +33,10 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+
+# Java
+java-samples/bin
+java-samples/.metadata
+java-samples/*/.settings
+java-samples/*/.classpath
