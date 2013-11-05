@@ -81,6 +81,12 @@ Control LOCOMO via web browser.
 Install python modules.
 
 	pip install -r packages.txt
+Require 'jquery\-1.9.1.min.js' and 'jquery.touchSwipe.js'. Please download them from following links, and put those files to the static/js directory.
+
+jquery: [http://jquery.com](http://jquery.com "http://jquery.com")
+
+jquery.touchSwipe: [https://github.com/mattbryson/TouchSwipe-Jquery-Plugin](https://github.com/mattbryson/TouchSwipe-Jquery-Plugin "https://github.com/mattbryson/TouchSwipe-Jquery-Plugin")
+
 ### Run
 
 	PYTHONPATH=$(pwd) python locomo.py

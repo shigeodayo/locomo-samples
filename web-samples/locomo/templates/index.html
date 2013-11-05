@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <!-- full screen -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- status bar-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- touch icon -->
+    <!--<link rel="apple-touch-icon-precomposed" href="static/img/apple-touch-icon-144x144-precomposed.png">-->
+
+
+    <!-- css -->
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/locomo.css') }}">
+
+  </head>
+  <body ontouchmove="event.preventDefault()">
+
+
+    <div id="rotation">
+    </div>
+
+    <div id="left_motor">
+    </div>
+
+
+    <div id="right_motor">
+    </div>
+
+
+    <form method="post" id="ip_form" action="{{ url_for('connect_to_locomo') }}">
+      <input id="locomo_ip" name="locomo_ip" type="input" placeholder="target ip address">
+      <input id="locomo_ip_btn" type="submit" value="connect">
+    </form>
+
+
+    <!-- javascript -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.9.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.touchSwipe.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/locomo.js') }}"></script>
+    <!--<script>
+    window.addEventListener("devicemotion", function(evt){
+      var xg = evt.accelerationIncludingGravity.x;
+      var yg = evt.accelerationIncludingGravity.y;
+      var zg = evt.accelerationIncludingGravity.z;
+
+      var txt = "x:"+xg+"<br>";
+      txt += "y:"+yg+"<br>";
+      txt += "z:"+zg+"<br>";
+
+      $('#rotation').html(txt);
+    }, true);
+    </script>-->
+  </body>
+</html>
