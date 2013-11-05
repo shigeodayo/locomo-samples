@@ -2,6 +2,8 @@
 
 Sample programs to control LOCOMO.
 
+about LOCOMO: [http://kougaku-navi.net/locomo/index.html](http://kougaku-navi.net/locomo/index.html "http://kougaku-navi.net/locomo/index.html")
+
 'udp' samples are for 'Xbee\-WiFi', set the 'Xbee\-WiFi' instead of 'Xbee' to LOCOMO board.
 
 You can set up a 'Xbee\-WiFi' by reference to the following link, or using X\-CTU.
