@@ -40,3 +40,7 @@ java-samples/bin
 java-samples/.metadata
 java-samples/*/.settings
 java-samples/*/.classpath
+
+
+
+.DS_Store

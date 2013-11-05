@@ -70,5 +70,17 @@ Java sample to control LOCOMO via UDP.
 
 Change 'UDP\_IP' and 'UDP\_PORT' to the appropriate one.
 
-		private static final String UDP_IP = "192.168.1.**"; // ip address of Xbee wifi
-		private static final int UDP_PORT = 9750; // port
+	    private static final String UDP_IP = "192.168.1.**"; // ip address of Xbee wifi
+	    private static final int UDP_PORT = 9750; // port
+## Web app samples
+
+Control LOCOMO via web browser.
+
+### setup
+
+Install python modules.
+
+	pip install -r packages.txt
+### Run
+
+	PYTHONPATH=$(pwd) python locomo.py
