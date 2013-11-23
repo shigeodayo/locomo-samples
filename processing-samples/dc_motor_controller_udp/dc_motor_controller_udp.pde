@@ -1,15 +1,15 @@
-import hypermedia.net.*;
+import processing.net.*;
 
-static final String UDP_IP = "192.168.1.30";  // ip address of Xbee wifi
+Client client;
+
+static final String UDP_IP = "192.168.1.58";  // ip address of Xbee wifi
 static final int UDP_PORT = 9750;  // port
 
-UDP udp;
 int speed = 255;
 
 
 void setup() {
-  udp = new UDP(this); //port from xbee wi-fi
-  udp.listen(true);
+  client = new Client(this, UDP_IP, UDP_PORT);
 
   noLoop();
 }
@@ -19,17 +19,17 @@ void draw() {
 
 
 void keyPressed() {
-  if ( keyCode==UP ) {
+  if (keyCode == UP) {
     moveForward();
-  } else if ( keyCode==DOWN ) {
+  } else if (keyCode == DOWN) {
     moveBackward();
-  } else if ( keyCode==RIGHT ) {
+  } else if (keyCode == RIGHT) {
     turnRight();
-  } else if ( keyCode==LEFT ) {
+  } else if (keyCode == LEFT) {
     turnLeft();
-  } else if ( key == '.') {
+  } else if (key == '.') {
     liftUp();
-  } else if ( key == ',') {
+  } else if (key == ',') {
     liftDown();
   }
 }
@@ -61,8 +61,6 @@ void stop() {
   send(0, 0, 0);
 }
 
-void send(int speedR, int speedL, int speedLift) {
-  udp.send("a" + speedR + "\r", UDP_IP, UDP_PORT);
-  udp.send("b" + speedL + "\r", UDP_IP, UDP_PORT);
-  udp.send("c" + speedLift + "\r", UDP_IP, UDP_PORT);
+void send(int speedR, int speedL, int speedM) {
+  client.write("L" + speedL + " R" + speedR + " M" + speedM + "\r");
 }
