@@ -51,6 +51,8 @@ Change 'UDP\_IP' and 'UDP\_PORT' to the appropriate one.
 
 	UDP_IP = "192.168.1.**"  # ip address of Xbee wifi
 	UDP_PORT = 9750  # port
+*\* If you're a Mac user, this sample only works on OS X 10.8 or earlier.*
+
 ## Java samples
 
 ### dc_motor_controller.java
@@ -92,3 +94,5 @@ jquery.touchSwipe: [https://github.com/mattbryson/TouchSwipe-Jquery-Plugin](http
 ### Run
 
 	PYTHONPATH=$(pwd) python locomo.py
+*\* If you're a Mac user, this sample only works on OS X 10.8 or earlier.*
+
