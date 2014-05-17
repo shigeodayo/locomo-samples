@@ -1,66 +1,42 @@
 import processing.net.*;
 
 Client client;
-
-static final String UDP_IP = "192.168.1.58";  // ip address of Xbee wifi
-static final int UDP_PORT = 9750;  // port
-
-int speed = 255;
-
+int speed_L = 0;
+int speed_R = 0;
 
 void setup() {
-  client = new Client(this, UDP_IP, UDP_PORT);
-
-  noLoop();
+  // connect to LOCOMO
+  client = new Client(this, "192.168.1.29", 9750); // set your IP address
 }
 
 void draw() {
+  // no operation
 }
 
-
+// control motors with yoru PC keyboard
 void keyPressed() {
-  if (keyCode == UP) {
-    moveForward();
-  } else if (keyCode == DOWN) {
-    moveBackward();
-  } else if (keyCode == RIGHT) {
-    turnRight();
-  } else if (keyCode == LEFT) {
-    turnLeft();
-  } else if (key == '.') {
-    liftUp();
-  } else if (key == ',') {
-    liftDown();
+  if ( keyCode==UP ) {
+    speed_L = 255;
+    speed_R = 255;
   }
+  if ( keyCode==DOWN ) {
+    speed_L = -255;
+    speed_R = -255;
+  }
+  if ( keyCode==LEFT ) {
+    speed_L = -255;
+    speed_R = 255;
+  }
+  if ( keyCode==RIGHT ) {
+    speed_L = 255;
+    speed_R = -255;
+  }
+  client.write("L" + speed_L + " R" + speed_R + "\r");
 }
 
+// stop all motors while releasing keyboard
 void keyReleased() {
-  stop();
-}
-
-
-void moveForward() {
-  send(speed, speed, 0);
-}
-void moveBackward() {
-  send(-speed, -speed, 0);
-}
-void turnRight() {
-  send(speed, -speed, 0);
-}
-void turnLeft() {
-  send(-speed, speed, 0);
-}
-void liftUp() {
-  send(0, 0, speed);
-}
-void liftDown() {
-  send(0, 0, -speed);
-}
-void stop() {
-  send(0, 0, 0);
-}
-
-void send(int speedR, int speedL, int speedM) {
-  client.write("L" + speedL + " R" + speedR + " M" + speedM + "\r");
+  speed_L = 0;
+  speed_R = 0;
+  client.write("L" + speed_L + " R" + speed_R + "\r");
 }
